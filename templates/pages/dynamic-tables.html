@@ -1,0 +1,622 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block extrastyle %}
+
+<style>
+
+.iframe-container {display: flex; width: 100%; height: 100%; flex-direction: column; overflow: hidden;}
+.parent-fit { flex-grow: 1; border: none; margin: 0; padding: 0; height: 100vh; }
+
+</style>
+
+{% endblock extrastyle %}
+
+{% block content %}
+
+
+<h1>Sentiment analysis</h1>
+
+<div class="col-sm-12">
+  <h5 class="mt-4"></h5>
+  <hr>
+  <!-- positive, Negative and mixed sentiments -->
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <!-- POSITIVE TAB -->
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+        aria-controls="pills-home" aria-selected="true">Positive Sentiments</a>
+    </li>
+    <!-- NEGATIVE TAB -->
+    <li class="nav-item">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+        aria-controls="pills-profile" aria-selected="false">Negative Sentiments</a>
+    </li>
+    <!-- MIXED TAB -->
+    <li class="nav-item">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+        aria-controls="pills-contact" aria-selected="false">Mixed Sentiments</a>
+    </li>
+  </ul>
+
+
+
+  <div class="tab-content" id="pills-tabContent">
+
+        <!-- POSITIVE SENTIMENTS -->
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+          aria-labelledby="pills-home-tab">
+                  <div class="row">
+                              <div class="col-md-3 col-sm-12">
+                                <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                  <!-- HOT KEY WORD 1 TAB -->
+                                  <li><a class="nav-link text-left active" id="v-pills-home-tab" data-toggle="pill"
+                                      href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Efficiency</a>
+                                  </li>
+                                  <!-- HOT KEY WORD 2 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-profile-tab" data-toggle="pill"
+                                      href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                                      aria-selected="false">Technology</a></li>
+                                  <!-- HOT KEY WORD 3 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-messages-tab" data-toggle="pill"
+                                      href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+                                      aria-selected="false">Customer Service</a></li>
+                                  <!-- HOT KEY WORD 4 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-settings-tab" data-toggle="pill"
+                                      href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                                      aria-selected="false">Accessibility</a></li>
+                                      <!-- HOT KEY WORD 4 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-settings-tab5" data-toggle="pill"
+                                      href="#v-pills-settings5" role="tab" aria-controls="v-pills-settings5"
+                                      aria-selected="false">Privacy</a></li>
+                                </ul>
+                              </div>
+                              <div class="col-md-9 col-sm-12">
+                                            <div style="padding: 0;
+                                            background: none;
+                                            box-shadow: none;" class="tab-content" id="v-pills-tabContent">
+                                                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                                                    aria-labelledby="v-pills-home-tab">
+                                                                    <div class="col-sm-12">
+                                                                      <ul class="nav nav-tabs" id="positive1" role="tablist">
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link active text-uppercase" id="positive1_desc" data-toggle="tab" href="#positive1_desc_tab" role="tab" aria-controls="positive1_desc_tab" aria-selected="true">Description</a>
+                                                                          </li>
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link text-uppercase" id="positive1_reviews" data-toggle="tab" href="#positive1_reviews_tab" role="tab" aria-controls="positive1_reviews_tab" aria-selected="false">Reviews</a>
+                                                                          </li>
+                                                                          <!-- Add other tab items here if needed -->
+                                                                      </ul>
+                                                                      <div class="tab-content" id="myTabContent2">
+                                                                          <div class="tab-pane fade show active" id="positive1_desc_tab" role="tabpanel" aria-labelledby="positive1_desc">
+                                                                              <!-- Description tab content -->
+                                                                              Efficiency is a common theme in the positive reviews, with users appreciating quick and easy processes at the Smart Police Station.
+                                                                          </div>
+                                                                          <div class="tab-pane fade" id="positive1_reviews_tab" role="tabpanel" aria-labelledby="positive1_reviews">
+                                                                              <!-- Reviews tab content -->
+                                                                              Review 1: "Efficiency and convenience."
+                                                                              <hr>
+                                                                              Review 3: "Impresses with its 24/7 accessibility, advanced technology."
+                                                                              <hr>
+                                                                              Review 7: "Quick help...quick report processing."
+                                                              
+                                                                          </div>
+                                                                          <!-- Add other tab content here if needed -->
+                                                                      </div>
+                                                                  </div>
+                                                                </div>
+
+                                                                
+                                                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                                                    <div class="col-sm-12">
+                                                                        <ul class="nav nav-tabs" id="positive1" role="tablist">
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link active text-uppercase" id="positive2_desc" data-toggle="tab" href="#positive2_desc_tab" role="tab" aria-controls="positive2_desc_tab" aria-selected="true">Description</a>
+                                                                            </li>
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link text-uppercase" id="positive2_reviews" data-toggle="tab" href="#positive2_reviews_tab" role="tab" aria-controls="positive2_reviews_tab" aria-selected="false">Reviews</a>
+                                                                            </li>
+                                                                            <!-- Add other tab items here if needed -->
+                                                                        </ul>
+                                                                        <div class="tab-content" id="myTabContent2">
+                                                                            <div class="tab-pane fade show active" id="positive2_desc_tab" role="tabpanel" aria-labelledby="positive2_desc">
+                                                                                <!-- Description tab content -->
+                                                                                Technology and its role in providing innovative services stand out as a key theme, reflecting the advanced features like interactive kiosks.
+                                                                            </div>
+                                                                            <div class="tab-pane fade" id="positive2_reviews_tab" role="tabpanel" aria-labelledby="positive2_reviews">
+                                                                                <!-- Reviews tab content -->
+                                                                                Review 1: "Innovative, technological advancements."
+                                                                                <hr>
+                                                                                Review 3: "Innovative tech-driven services."
+                                                                                <hr>
+                                                                                Review 4: "All services electronic and smart."
+                                                                                <hr>
+                                                                                Review 24: "Tech-savvy Smart Police Station."
+                                                                            </div>
+                                                                            <!-- Add other tab content here if needed -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                                                  <div class="col-sm-12">
+                                                                      <ul class="nav nav-tabs" id="myTab3" role="tablist">
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link active text-uppercase" id="home-tab3" data-toggle="tab" href="#home_tab3" role="tab" aria-controls="home_tab3" aria-selected="true">Description</a>
+                                                                          </li>
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link text-uppercase" id="profile-tab3" data-toggle="tab" href="#profile_tab3" role="tab" aria-controls="profile_tab3" aria-selected="false">Reviews</a>
+                                                                          </li>
+                                                                       
+                                                                          <!-- Add other tab items here if needed -->
+                                                                      </ul>
+                                                                      <div class="tab-content" id="myTabContent3">
+                                                                          <div class="tab-pane fade show active" id="home_tab3" role="tabpanel" aria-labelledby="home-tab3">
+                                                                              <!-- Home tab content -->
+                                                                              Customer service is a significant point of concern in negative reviews, with mentions of rudeness and poor service from staff.
+                                                                          </div>
+                                                                          <div class="tab-pane fade" id="profile_tab3" role="tabpanel" aria-labelledby="profile-tab3">
+                                                                              <!-- Profile tab content -->
+                                                                              Review 2: "Rudeness and poor customer service."
+                                                                              <hr>
+                                                                              Review 23: "Rude service. After reading the comments should have not gone there."
+                                                                              <hr>
+                                                                              Review 25: "Very rude officer."
+                                                                              <hr>
+                                                                          </div>
+                                                                      
+                                                                          <!-- Add other tab content here if needed -->
+                                                                      </div>
+                                                                  </div>
+                                                                </div>
+                                                              
+                                                              
+                                                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                                                  <div class="col-sm-12">
+                                                                      <ul class="nav nav-tabs" id="myTab4" role="tablist">
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link active text-uppercase" id="tab4_item1" data-toggle="tab" href="#tab4_content1" role="tab" aria-controls="tab4_content1" aria-selected="true">Description</a>
+                                                                          </li>
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link text-uppercase" id="tab4_item2" data-toggle="tab" href="#tab4_content2" role="tab" aria-controls="tab4_content2" aria-selected="false">Reviews</a>
+                                                                          </li>
+                                                                          <!-- Add other tab items here if needed -->
+                                                                      </ul>
+                                                                      <div class="tab-content" id="myTabContent4">
+                                                                          <div class="tab-pane fade show active" id="tab4_content1" role="tabpanel" aria-labelledby="tab4_item1">
+                                                                              <!-- Item 1 tab content -->
+                                                                              The 24/7 availability and accessibility of services through various channels, including online complaint filing, are key points in several reviews.
+                                                                          </div>
+                                                                          <div class="tab-pane fade" id="tab4_content2" role="tabpanel" aria-labelledby="tab4_item2">
+                                                                              <!-- Item 2 tab content -->
+                                                                              Review 1: "24/7 accessibility, quick processes."
+                                                                              <hr>
+                                                                              Review 3: "24/7 availability."
+                                                                              <hr>
+                                                                              Review 8: "Very easy n fast service."
+                                                                              <hr>
+                                                                              Review 21: "Very easy to update the number in the system."
+                                                                              <hr>
+                                                                          </div>
+                                                                          <!-- Add other tab content here if needed -->
+                                                                      </div>
+                                                                  </div>
+                                                                </div>
+
+                                                                <div class="tab-pane fade" id="v-pills-settings5" role="tabpanel" aria-labelledby="v-pills-settings-tab5">
+                                                                  <div class="col-sm-12">
+                                                                      <ul class="nav nav-tabs" id="myTab5" role="tablist">
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link active text-uppercase" id="tab5_item1" data-toggle="tab" href="#tab5_content1" role="tab" aria-controls="tab5_content1" aria-selected="true">Description</a>
+                                                                          </li>
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link text-uppercase" id="tab5_item2" data-toggle="tab" href="#tab5_content2" role="tab" aria-controls="tab5_content2" aria-selected="false">Reviews</a>
+                                                                          </li>
+                                                                          <!-- Add other tab items here if needed -->
+                                                                      </ul>
+                                                                      <div class="tab-content" id="myTabContent5">
+                                                                          <div class="tab-pane fade show active" id="tab5_content1" role="tabpanel" aria-labelledby="tab5_item1">
+                                                                              <!-- Item 1 tab content -->
+                                                                              Privacy concerns during discussions and follow-up on complaints are mentioned, reflecting a need for improvement in this area.
+                                                                          </div>
+                                                                          <div class="tab-pane fade" id="tab5_content2" role="tabpanel" aria-labelledby="tab5_item2">
+                                                                              <!-- Item 2 tab content -->
+                                                                              Review 10: "Privacy concerns during discussions."
+                                                                              <hr>
+                                                                              Review 12: "Poor privacy in the interrogation room."
+                                                                              <hr>
+                                                                              Review 15: "Some issues with a lack of privacy."
+                                                                              <hr>
+                                                                          </div>
+                                                                          <!-- Add other tab content here if needed -->
+                                                                      </div>
+                                                                  </div>
+                                                                </div>
+                                                              
+                                            </div>
+                              </div>
+                  </div>
+        </div>
+
+
+        <!-- NEGATIVE SENTIMENTS -->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="row">
+                              <div class="col-md-3 col-sm-12">
+                                <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                                  <!-- NEGATIVE 1 TAB -->
+                                  <li><a class="nav-link text-left active" id="v-pills-home-tab2" data-toggle="pill"
+                                      href="#v-pills-home2" role="tab" aria-controls="v-pills-home" aria-selected="true"> Rudeness and Poor Customer Service</a>
+                                  </li>
+
+
+                                  <!-- NEGATIVE 2 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-profile-tab2" data-toggle="pill"
+                                      href="#v-pills-profile2" role="tab" aria-controls="v-pills-profile"
+                                      aria-selected="false">Service Unavailability</a></li>
+
+                                  <!-- NEGATIVE 3 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-messages-tab2" data-toggle="pill"
+                                      href="#v-pills-messages2" role="tab" aria-controls="v-pills-messages"
+                                      aria-selected="false">Communication Issues</a></li>
+
+                                  <!-- NEGATIVE 4 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-settings-tab2" data-toggle="pill"
+                                      href="#v-pills-settings2" role="tab" aria-controls="v-pills-settings"
+                                      aria-selected="false">Privacy Concerns</a></li>
+
+                                  <!-- NEGATIVE 5 TAB -->
+                                  <li><a class="nav-link text-left" id="v-pills-settings-tab25" data-toggle="pill"
+                                    href="#v-pills-settings25" role="tab" aria-controls="v-pills-settings"
+                                    aria-selected="false">Lack of Effective Communication</a></li>
+
+                                  
+                                </ul>
+                              </div>
+                              <div class="col-md-9 col-sm-12">
+                                <div style="padding: 0;
+                                background: none;
+                                box-shadow: none;" class="tab-content" id="v-pills-tabContent">
+
+                                                    <!-- NEGATIVE 1 CONTENT -->
+                                                    <div class="tab-pane fade show active" id="v-pills-home2" role="tabpanel"
+                                                        aria-labelledby="v-pills-home-tab2">
+                                                        <div class="col-sm-12">
+                                                          <ul class="nav nav-tabs" id="myTabNegative1" role="tablist">
+                                                              <li class="nav-item">
+                                                                  <a class="nav-link active text-uppercase" id="negative1_desc" data-toggle="tab" href="#negative1_desc_tab" role="tab" aria-controls="negative1_desc_tab" aria-selected="true">Description</a>
+                                                              </li>
+                                                              <li class="nav-item">
+                                                                  <a class="nav-link text-uppercase" id="negative1_reviews" data-toggle="tab" href="#negative1_reviews_tab" role="tab" aria-controls="negative1_reviews_tab" aria-selected="false">Reviews</a>
+                                                              </li>
+                                                              <!-- Add other tab items here if needed -->
+                                                          </ul>
+                                                          <div class="tab-content" id="myTabContentNegative1">
+                                                              <div class="tab-pane fade show active" id="negative1_desc_tab" role="tabpanel" aria-labelledby="negative1_desc">
+                                                                  <!-- Item 1 tab content -->
+                                                                  Several reviews mention instances of rudeness and poor customer service from staff at the Smart Police Station. Users have expressed dissatisfaction with the behavior and assistance provided by officers, leading to negative experiences.
+                                                              </div>
+                                                              <div class="tab-pane fade" id="negative1_reviews_tab" role="tabpanel" aria-labelledby="negative1_reviews">
+                                                                  <!-- Item 2 tab content -->
+                                                                  Review 15: "To be honest I have been here a very long time, I love the Dubai police, but here when I come to open a file, one of the officers was very rude."
+                                                                  <hr>
+                                                                  Review 28: "Very rude officer. Poor customer service not ready to help."
+                                                                  <hr>
+                                                                  Review 34: "I went to update my number, and there is no option to update the number. 30 minutes wasted."
+                                                              </div>
+                                                              <!-- Add other tab content here if needed -->
+                                                          </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <!-- NEGATIVE 2 CONTENT -->
+                                                    <div class="tab-pane fade" id="v-pills-profile2" role="tabpanel" aria-labelledby="v-pills-profile-tab2">
+                                                        <div class="col-sm-12">
+                                                            <ul class="nav nav-tabs" id="myTabNegative2" role="tablist">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active text-uppercase" id="negative2_desc" data-toggle="tab" href="#negative2_desc_tab" role="tab" aria-controls="negative2_desc_tab" aria-selected="true">Description</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link text-uppercase" id="negative2_reviews" data-toggle="tab" href="#negative2_reviews_tab" role="tab" aria-controls="negative2_reviews_tab" aria-selected="false">Reviews</a>
+                                                                </li>
+                                                                <!-- Add other tab items here if needed -->
+                                                            </ul>
+                                                            <div class="tab-content" id="myTabContentNegative2">
+                                                                <div class="tab-pane fade show active" id="negative2_desc_tab" role="tabpanel" aria-labelledby="negative2_desc">
+                                                                    <!-- Description tab content -->
+                                                                    Users have reported issues with service unavailability at the Smart Police Station. This includes instances where service points were occupied for extended periods or, in some cases, out of service. Such problems have led to frustration and inconvenience.
+                                                                </div>
+                                                                <div class="tab-pane fade" id="negative2_reviews_tab" role="tabpanel" aria-labelledby="negative2_reviews">
+                                                                    <!-- Reviews tab content -->
+                                                                    Review 2: "Horrible experience at the City Walk SPS. First time I went, the worker told us that the only service point was occupied for an undefined amount of time, and to go to another SPS."
+                                                                    <hr>
+                                                                    Review 22: "Wanted to update my phone number in Emirates ID. In charge was very rude. 01/05/2021 @ 4:45 pm."
+                                                                </div>
+                                                                <!-- Add other tab content here if needed -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+
+
+                                                    <!-- NEGATIVE 3 CONTENT -->
+                                                    <div class="tab-pane fade" id="v-pills-messages2" role="tabpanel" aria-labelledby="v-pills-messages-tab2">
+                                                      <div class="col-sm-12">
+                                                          <ul class="nav nav-tabs" id="myTabNegative3" role="tablist">
+                                                              <li class="nav-item">
+                                                                  <a class="nav-link active text-uppercase" id="negative3_desc" data-toggle="tab" href="#negative3_desc_tab" role="tab" aria-controls="negative3_desc_tab" aria-selected="true">Home</a>
+                                                              </li>
+                                                              <li class="nav-item">
+                                                                  <a class="nav-link text-uppercase" id="negative3_reviews" data-toggle="tab" href="#negative3_reviews_tab" role="tab" aria-controls="negative3_reviews_tab" aria-selected="false">Profile</a>
+                                                              </li>
+                                                              <!-- Add other tab items here if needed -->
+                                                          </ul>
+                                                          <div class="tab-content" id="myTabContentNegative3">
+                                                              <div class="tab-pane fade show active" id="negative3_desc_tab" role="tabpanel" aria-labelledby="negative3_desc">
+                                                                  <!-- Home tab content -->
+                                                                  Reviews have highlighted communication issues, such as ineffective communication from the Smart Police Station staff. Users have encountered challenges when seeking assistance or reporting problems, resulting in less-than-satisfactory experiences.
+                                                              </div>
+                                                              <div class="tab-pane fade" id="negative3_reviews_tab" role="tabpanel" aria-labelledby="negative3_reviews">
+                                                                  <!-- Profile tab content -->
+                                                                  Review 14: "Its was very bad experience... my phone was hacked, and I went there... they just advised us to do it through online... didn't even ask me what was the issue."
+                                                                  <hr>
+                                                                  Review 25: "Tried to update my phone number and it didn’t work."
+                                                              </div>
+                                                              <!-- Add other tab content here if needed -->
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                                  
+
+
+                                                    <!-- NEGATIVE 4 CONTENT -->
+                                                    <div class="tab-pane fade" id="v-pills-settings2" role="tabpanel" aria-labelledby="v-pills-settings-tab2">
+                                                      <div class="col-sm-12">
+                                                          <ul class="nav nav-tabs" id="myTabNegative4" role="tablist">
+                                                              <li class="nav-item">
+                                                                  <a class="nav-link active text-uppercase" id="negative4_desc" data-toggle="tab" href="#negative4_desc_tab" role="tab" aria-controls="negative4_desc_tab" aria-selected="true">Description</a>
+                                                              </li>
+                                                              <li class="nav-item">
+                                                                  <a class="nav-link text-uppercase" id="negative4_reviews" data-toggle="tab" href="#negative4_reviews_tab" role="tab" aria-controls="negative4_reviews_tab" aria-selected="false">Reviews</a>
+                                                              </li>
+                                                              <!-- Add other tab items here if needed -->
+                                                          </ul>
+                                                          <div class="tab-content" id="myTabContentNegative4">
+                                                              <div class="tab-pane fade show active" id="negative4_desc_tab" role="tabpanel" aria-labelledby="negative4_desc">
+                                                                  <!-- Item 1 tab content -->
+                                                                  Some reviews express privacy concerns, particularly related to the handling of personal information and communication with the Smart Police Station. Users have mentioned worries about the security of their data when interacting with the station.
+                                                              </div>
+                                                              <div class="tab-pane fade" id="negative4_reviews_tab" role="tabpanel" aria-labelledby="negative4_reviews">
+                                                                  <!-- Item 2 tab content -->
+                                                                  Review 27: "+971568754719 this is a number of scammers, they will call people saying they are a banker or Dubai police asking people for ID information to check along with the bank card number, be careful with calls like that."
+                                                                  <hr>
+                                                                  Review 29: "I just went there to update my mobile number but unfortunately the facility was not available there.
+                                                              </div>
+                                                              <!-- Add other tab content here if needed -->
+                                                          </div>
+                                                      </div>
+                                                  </div>
+
+                                                 <!-- NEGATIVE 5 CONTENT -->
+                                                 <div class="tab-pane fade" id="v-pills-settings25" role="tabpanel" aria-labelledby="v-pills-settings-tab25">
+                                                  <div class="col-sm-12">
+                                                      <ul class="nav nav-tabs" id="myTabNegative5" role="tablist">
+                                                          <li class="nav-item">
+                                                              <a class="nav-link active text-uppercase" id="negative5_desc" data-toggle="tab" href="#negative5_desc_tab" role="tab" aria-controls="negative5_desc_tab" aria-selected="true">Description</a>
+                                                          </li>
+                                                          <li class="nav-item">
+                                                              <a class="nav-link text-uppercase" id="negative5_reviews" data-toggle="tab" href="#negative5_reviews_tab" role="tab" aria-controls="negative5_reviews_tab" aria-selected="false">Reviews</a>
+                                                          </li>
+                                                          <!-- Add other tab items here if needed -->
+                                                      </ul>
+                                                      <div class="tab-content" id="myTabContentNegative5">
+                                                          <div class="tab-pane fade show active" id="negative5_desc_tab" role="tabpanel" aria-labelledby="negative5_desc">
+                                                              <!-- Item 1 tab content -->
+                                                              Users have pointed out a lack of effective communication when dealing with the Smart Police Station. This includes cases where problems or complaints were not adequately addressed, leading to frustration and difficulties in resolving issues.
+                                                          </div>
+                                                          <div class="tab-pane fade" id="negative5_reviews_tab" role="tabpanel" aria-labelledby="negative5_reviews">
+                                                              <!-- Item 2 tab content -->
+                                                              Review 14: "Its was very bad experience... my phone was hacked, and I went there... they just advised us to do it through online... didn't even ask me what was the issue."
+                                                              <hr>
+                                                              Review 25: "Tried to update my phone number and it didn’t work."
+                                                              <hr>
+                                                              Review 32: "I've got my debit card fraud payment online. I had complained to SPS City Walk last Jan 26, 22, and one police officer filed a case, and he gave me a CID phone number to follow up on my complaint, but until now, I can't contact that number... just keep ringing, no one picks the call. Please, I really need help... thank you."
+                                                          </div>
+                                                          <!-- Add other tab content here if needed -->
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                                  
+                                </div>
+                  </div>
+                  </div>
+        </div>
+
+
+        <!-- MIXED SENTIMENTS -->
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  <div class="row">
+                              <div class="col-md-3 col-sm-12">
+                                <ul class="nav flex-column nav-pills" id="v-pills-tab3" role="tablist" aria-orientation="vertical">
+                                  <li><a class="nav-link text-left active" id="v-pills-home-tab3" data-toggle="pill"
+                                      href="#v-pills-home3" role="tab" aria-controls="v-pills-home" aria-selected="true">Long Wait Times</a>
+                                  </li>
+                                  <li><a class="nav-link text-left" id="v-pills-profile-tab3" data-toggle="pill"
+                                      href="#v-pills-profile3" role="tab" aria-controls="v-pills-profile"
+                                      aria-selected="false">Efficiency and Accessibility</a></li>
+                                  <li><a class="nav-link text-left" id="v-pills-messages-tab3" data-toggle="pill"
+                                      href="#v-pills-messages3" role="tab" aria-controls="v-pills-messages"
+                                      aria-selected="false">Privacy and Communication</a></li>
+                                  <li><a class="nav-link text-left" id="v-pills-settings-tab3" data-toggle="pill"
+                                      href="#v-pills-settings3" role="tab" aria-controls="v-pills-settings"
+                                      aria-selected="false">Service Availability and Technology</a></li>
+
+                                  <li><a class="nav-link text-left" id="v-pills-settings-tab35" data-toggle="pill"
+                                        href="#v-pills-settings35" role="tab" aria-controls="v-pills-settings"
+                                        aria-selected="false">Efficiency and Communication Challenges </a></li>
+                                </ul>
+                              </div>
+                                 <div class="col-md-9 col-sm-12">
+                                <div style="padding: 0;
+                                background: none;
+                                box-shadow: none;" class="tab-content" id="v-pills-tabContent">
+
+                                                    <!-- mixed 1 CONTENT -->
+                                                    <div class="tab-pane fade show active" id="v-pills-home3" role="tabpanel"
+                                                        aria-labelledby="v-pills-home-tab3">
+                                                                  <div class="col-sm-12">
+                                                                            <ul class="nav nav-tabs" id="myTabMixed1" role="tablist">
+                                                                              <li class="nav-item">
+                                                                                  <a class="nav-link active text-uppercase" id="mixed1_desc" data-toggle="tab" href="#mixed1_desc_tab" role="tab" aria-controls="mixed1_desc_tab" aria-selected="true">Description</a>
+                                                                              </li>
+                                                                              <li class="nav-item">
+                                                                                  <a class="nav-link text-uppercase" id="mixed1_reviews" data-toggle="tab" href="#mixed1_reviews_tab" role="tab" aria-controls="mixed1_reviews_tab" aria-selected="false">Reviews</a>
+                                                                              </li>
+                                                                              <!-- Add other tab items here if needed -->
+                                                                            </ul>
+                                                                            <div class="tab-content" id="myTabContentMixed1">
+                                                                                <div class="tab-pane fade show active" id="mixed1_desc_tab" role="tabpanel" aria-labelledby="mixed1_desc">
+                                                                                    <!-- Item 1 tab content -->
+                                                                                    This keyword represents instances where users experienced extended wait times at the Smart Police Station, leading to a mix of positive and negative feedback.
+                                                                                </div>
+                                                                                <div class="tab-pane fade" id="mixed1_reviews_tab" role="tabpanel" aria-labelledby="mixed1_reviews">
+                                                                                    <!-- Item 2 tab content -->
+                                                                                    Review 2: "Horrible experience at the City Walk SPS. First time I went, the worker told us that the only service point was occupied for an undefined amount of time, and to go to another SPS."
+                                                                                    <hr>
+                                                                                    Review 22: "Wanted to update my phone number in Emirates ID. In charge was very rude. 01/05/2021 @ 4:45 pm."
+                                                                                </div>
+                                                                                <!-- Add other tab content here if needed -->
+                                                                            </div> 
+                                                                   </div>
+                                                    </div>
+
+                                                    <!-- mixed 2 CONTENT -->
+                                                    <div class="tab-pane fade" id="v-pills-profile3" role="tabpanel" aria-labelledby="v-pills-profile-tab3">
+                                                              <div class="col-sm-12">
+                                                                        <ul class="nav nav-tabs" id="myTabMixed2" role="tablist">
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link active text-uppercase" id="mixed2_desc" data-toggle="tab" href="#mixed2_desc_tab" role="tab" aria-controls="mixed2_desc_tab" aria-selected="true">Description</a>
+                                                                          </li>
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link text-uppercase" id="mixed2_reviews" data-toggle="tab" href="#mixed2_reviews_tab" role="tab" aria-controls="mixed2_reviews_tab" aria-selected="false">Reviews</a>
+                                                                          </li>
+                                                                          <!-- Add other tab items here if needed -->
+                                                                        </ul>
+                                                                        <div class="tab-content" id="myTabContentMixed2">
+                                                                            <div class="tab-pane fade show active" id="mixed2_desc_tab" role="tabpanel" aria-labelledby="mixed2_desc">
+                                                                                <!-- Item 1 tab content -->
+                                                                                This keyword combines both positive and negative sentiments related to the efficiency of services and the accessibility of the Smart Police Station.
+                                                                            </div>
+                                                                            <div class="tab-pane fade" id="mixed2_reviews_tab" role="tabpanel" aria-labelledby="mixed2_reviews">
+                                                                                <!-- Item 2 tab content -->
+                                                                                Review 7: "In this Smart Police Station (SPS) CityWalk downtown Dubai and Easy to Report complaints. Police Officers are good advice and suggestions. Very simple steps, Excellent Service."
+                                                                                <hr>
+                                                                                Review 26: "I went to update my number, and there is no option to update the number. 30 minutes wasted."
+                                                                            </div>
+                                                                            <!-- Add other tab content here if needed -->
+                                                                        </div> 
+                                                              </div>
+                                                    </div>
+                                                    
+
+
+                                                    <!-- mixed 3 CONTENT -->
+                                                    <div class="tab-pane fade" id="v-pills-messages3" role="tabpanel" aria-labelledby="v-pills-messages-tab3">
+                                                              <div class="col-sm-12">
+                                                                        <ul class="nav nav-tabs" id="myTabMixed3" role="tablist">
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link active text-uppercase" id="mixed3_desc" data-toggle="tab" href="#mixed3_desc_tab" role="tab" aria-controls="mixed3_desc_tab" aria-selected="true">Description</a>
+                                                                          </li>
+                                                                          <li class="nav-item">
+                                                                              <a class="nav-link text-uppercase" id="mixed3_reviews" data-toggle="tab" href="#mixed3_reviews_tab" role="tab" aria-controls="mixed3_reviews_tab" aria-selected="false">Reviews</a>
+                                                                          </li>
+                                                                          <!-- Add other tab items here if needed -->
+                                                                        </ul>
+                                                                        <div class="tab-content" id="myTabContentMixed3">
+                                                                            <div class="tab-pane fade show active" id="mixed3_desc_tab" role="tabpanel" aria-labelledby="mixed3_desc">
+                                                                                <!-- Item 1 tab content -->
+                                                                                This keyword reflects a combination of privacy concerns and communication issues experienced by users during their interactions with the Smart Police Station.
+                                                                            </div>
+                                                                            <div class="tab-pane fade" id="mixed3_reviews_tab" role="tabpanel" aria-labelledby="mixed3_reviews">
+                                                                                <!-- Item 2 tab content -->
+                                                                                Review 27: "+971568754719 this is a number of scammers, they will call people saying they are a banker or Dubai police asking people for ID information to check along with the bank card number, be careful with calls like that."
+                                                                                <hr>
+                                                                                Review 14: "Its was very bad experience... my phone was hacked, and I went there... they just advised us to do it through online... didn't even ask me what was the issue."
+                                                                            </div>
+                                                                            <!-- Add other tab content here if needed -->
+                                                                        </div> 
+                                                              </div>
+                                                    </div>
+                                                  
+
+
+                                                    <!-- mixed 4 CONTENT -->
+                                                    <div class="tab-pane fade" id="v-pills-settings3" role="tabpanel" aria-labelledby="v-pills-settings-tab3">
+                                                                  <div class="col-sm-12">
+                                                                            <ul class="nav nav-tabs" id="myTabMixed4" role="tablist">
+                                                                              <li class="nav-item">
+                                                                                  <a class="nav-link active text-uppercase" id="mixed4_desc" data-toggle="tab" href="#mixed4_desc_tab" role="tab" aria-controls="mixed4_desc_tab" aria-selected="true">Description</a>
+                                                                              </li>
+                                                                              <li class="nav-item">
+                                                                                  <a class="nav-link text-uppercase" id="mixed4_reviews" data-toggle="tab" href="#mixed4_reviews_tab" role="tab" aria-controls="mixed4_reviews_tab" aria-selected="false">Reviews</a>
+                                                                              </li>
+                                                                              <!-- Add other tab items here if needed -->
+                                                                            </ul>
+                                                                            <div class="tab-content" id="myTabContentMixed3">
+                                                                                <div class="tab-pane fade show active" id="mixed4_desc_tab" role="tabpanel" aria-labelledby="mixed4_desc">
+                                                                                    <!-- Item 1 tab content -->
+                                                                                    his keyword combines comments on the availability of services at the Smart Police Station with references to the role of technology in delivering innovative solutions.
+                                                                                </div>
+                                                                                <div class="tab-pane fade" id="mixed4_reviews_tab" role="tabpanel" aria-labelledby="mixed4_reviews">
+                                                                                    <!-- Item 2 tab content -->
+                                                                                    Review 15: "To be honest I have been here a very long time, I love the Dubai police, but here when I come to open a file, one of the officers was very rude."
+                                                                                    <hr>
+                                                                                    Review 5: "In this Smart Police Station (SPS) CityWalk downtown Dubai and Easy to Report complaints (I reported an open case on 11/11/2022.). Police Officers are good advice and suggestions. Very simple steps, Excellent Service."
+                                                                                </div>
+                                                                                <!-- Add other tab content here if needed -->
+                                                                            </div> 
+                                                                  </div>
+                                                    </div>
+
+
+                                                    
+                                                    <!-- mixed 5 CONTENT -->
+                                                    <div class="tab-pane fade" id="v-pills-settings35" role="tabpanel" aria-labelledby="v-pills-settings-tab35">
+                                                      <div class="col-sm-12">
+                                                                <ul class="nav nav-tabs" id="myTabMixed5" role="tablist">
+                                                                  <li class="nav-item">
+                                                                      <a class="nav-link active text-uppercase" id="mixed5_desc" data-toggle="tab" href="#mixed5_desc_tab" role="tab" aria-controls="mixed5_desc_tab" aria-selected="true">Description</a>
+                                                                  </li>
+                                                                  <li class="nav-item">
+                                                                      <a class="nav-link text-uppercase" id="mixed5_reviews" data-toggle="tab" href="#mixed5_reviews_tab" role="tab" aria-controls="mixed5_reviews_tab" aria-selected="false">Reviews</a>
+                                                                  </li>
+                                                                  <!-- Add other tab items here if needed -->
+                                                                </ul>
+                                                                <div class="tab-content" id="myTabContentMixed5">
+                                                                    <div class="tab-pane fade show active" id="mixed5_desc_tab" role="tabpanel" aria-labelledby="mixed5_desc">
+                                                                        <!-- Item 1 tab content -->
+                                                                        his keyword combines user comments on the efficiency of processes at the Smart Police Station with challenges related to effective communication.
+                                                                    </div>
+                                                                    <div class="tab-pane fade" id="mixed5_reviews_tab" role="tabpanel" aria-labelledby="mixed5_reviews">
+                                                                        <!-- Item 2 tab content -->
+                                                                        Review 30: "I went there for my Emirates ID registering when I enter I meet one gentleman from Dubai police he helped me and it’s very easy and faster in just four minutes I done it it’s amazing and wonderful there is five stars I want to give them 7 stars thanks DP."
+                                                                        <hr>
+                                                                        Review 32: "I've got my debit card fraud payment online. I had complained to SPS City Walk last Jan 26, 22, and one police officer filed a case, and he gave me a CID phone number to follow up on my complaint, but until now, I can't contact that number... just keep ringing, no one picks the call."
+                                                                    </div>
+                                                                    <!-- Add other tab content here if needed -->
+                                                                </div> 
+                                                      </div>
+                                        </div>
+                                                  
+                                </div>
+                  </div>
+        </div>
+
+
+
+  </div>
+</div>
+{% endblock content %}

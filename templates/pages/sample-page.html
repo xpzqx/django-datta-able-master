@@ -1,0 +1,460 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+
+
+{% block extrastyle %}
+  <!-- morris css -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/chart-morris/css/morris.css' %}">
+{% endblock extrastyle %}
+
+
+{% block content %}
+
+  <!-- [ Main Content ] start -->
+  <div class=".col-12 col-md-12 m-b-30">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#Descriptive" role="tab" aria-controls="home"
+          aria-selected="false">Descriptive Analysis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#diagnostic" role="tab"
+          aria-controls="profile" aria-selected="true">Diagnostic Analysis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#prespective" role="tab"
+          aria-controls="contact" aria-selected="false">Prespective Analysis</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="comparative-tab" data-toggle="tab" href="#comparative" role="tab"
+          aria-controls="contact" aria-selected="false">Comparative Analysis</a>
+      </li>
+    </ul>
+
+
+    <div class="tab-content" id="myTabContent">
+
+      <!-- Descriptive analysis -->
+      <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div id="descriptive-content">
+                  <div class="row">
+                    <!-- [ Morris Chart ] start -->
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Donut Chart</h5>
+                        </div>
+                        <div class="card-block">
+                          <div id="donut-example" class="morris-donut-inverse"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [ rating list ] starts-->
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Rating</h5>
+                        </div>
+                        <div class="card-block">
+                          <div class="row align-items-center justify-content-center m-b-20">
+                            <div class="col-6">
+                              <h2 class="f-w-300 d-flex align-items-center float-left m-0">4.7 <i
+                                  class="fas fa-star f-10 m-l-10 text-c-yellow"></i></h2>
+                            </div>
+                            <div class="col-6">
+                              <h6 class="d-flex  align-items-center float-right m-0">0.4 <i
+                                  class="fas fa-caret-up text-c-green f-22 m-l-10"></i></h6>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xl-12">
+                              <h6 class="align-items-center float-left"><i
+                                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>5</h6>
+                              <h6 class="align-items-center float-right">384</h6>
+                              <div class="progress m-t-30 m-b-20" style="height: 6px;">
+                                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 70%;"
+                                  aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                            <div class="col-xl-12">
+                              <h6 class="align-items-center float-left"><i
+                                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>4</h6>
+                              <h6 class="align-items-center float-right">145</h6>
+                              <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 35%;"
+                                  aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                            <div class="col-xl-12">
+                              <h6 class="align-items-center float-left"><i
+                                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>3</h6>
+                              <h6 class="align-items-center float-right">24</h6>
+                              <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 25%;"
+                                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                            <div class="col-xl-12">
+                              <h6 class="align-items-center float-left"><i
+                                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>2</h6>
+                              <h6 class="align-items-center float-right">1</h6>
+                              <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                <div class="progress-bar progress-c-theme" role="progressbar" style="width: 10%;"
+                                  aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                            <div class="col-xl-12">
+                              <h6 class="align-items-center float-left"><i
+                                  class="fas fa-star f-10 m-r-10 text-c-yellow"></i>1</h6>
+                              <h6 class="align-items-center float-right">0</h6>
+                              <div class="progress m-t-30  m-b-20" style="height: 6px;">
+                                <div class="progress-bar" role="progressbar" style="width:0;" aria-valuenow="0"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Key Points from Positive Sentiments</h5>
+                        </div>
+                        <div class="card-block">
+                          Users appreciate the efficiency of services.
+                          <hr>
+                          Technology and innovation are highly praised, with mentions of 24/7 accessibility and advanced features.
+                          <hr>
+                          Friendly and helpful staff receive positive comments.
+                          <hr>
+                          Fast response times are noted as a positive aspect.              </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Key Points from Negative Sentiments</h5>
+                        </div>
+                        <div class="card-block">
+                          Negative feedback is related to rudeness and poor customer service.
+                          <hr>
+                          Complaints about unavailability of specific services.
+                          <hr>
+                          Issues with communication, both in-person and online.
+                          <hr>
+                          Privacy concerns during discussions and follow-up on complaints.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Key Points from Mixed Sentiments</h5>
+                        </div>
+                        <div class="card-block">
+                          Mixed experiences with online complaints, varying based on user expectations.
+                          <hr>
+                          Some users express both positive and negative feedback about services.
+                          <hr>
+                          Different perceptions of service quality.             
+                        </div>
+                      </div>
+                    </div>
+              <!-- [ rating list ] end-->
+                    <!-- [ Morris Chart ] end -->
+                  </div>
+        </div>
+      </div>
+
+
+      <!-- Diagnostic analysis -->
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div id="diagnostic-content">
+
+                <div class="row">
+                  <!-- [ Morris Chart ] start -->
+                  <div class="col-xl-6">
+                    <div class="card user-list">
+                      <div class="card-header">
+                        <h5>Rudeness and Poor Customer Service</h5>
+                      </div>
+                      <div class="card-block">
+                        Root Causes: Complaints about staff rudeness and poor customer service stem from a lack of training and communication skills among some employees.
+                        <hr>
+                        Actions: Implement training programs to enhance customer service and interpersonal skills among staff.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6">
+                    <div class="card user-list">
+                      <div class="card-header">
+                        <h5>Service Unavailability</h5>
+                      </div>
+                      <div class="card-block">
+                        Root Causes: Negative feedback regarding service unavailability results from issues in the management of service points and resources.
+                        <hr>
+                        Actions: Streamline service point management, ensuring that services are consistently available to users.              </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card user-list">
+                      <div class="card-header">
+                        <h5>Communication Issues</h5>
+                      </div>
+                      <div class="card-block">
+                        Root Causes: Communication issues arise from misunderstandings between staff and users, both in person and through online channels.
+                        <hr>
+                        Actions: Improve communication protocols, offer clear instructions, and enhance online support to address these issues.              </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card user-list">
+                      <div class="card-header">
+                        <h5>
+                          Privacy Concerns
+                        </h5>
+                      </div>
+                      <div class="card-block">
+                        Root Causes: Privacy concerns stem from a lack of clear information and transparency in the handling of sensitive data and discussions.
+                        <hr>
+                        Actions: Strengthen privacy policies, educate staff on data protection, and communicate clearly with users regarding privacy measures.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6">
+                    <div class="card user-list">
+                      <div class="card-header">
+                        <h5>
+                          Varying Expectations and Mixed Reviews             </h5>
+                      </div>
+                      <div class="card-block">
+                        Root Causes: Mixed reviews result from diverse user expectations and perceptions of service quality.
+                        <hr>
+                        Actions: Continuously adapt services to cater to varying user needs and provide clear information on service offerings.
+                      </div>
+                    </div>
+                  </div>
+            <!-- [ rating list ] end-->
+                  <!-- [ Morris Chart ] end -->
+                </div>
+        </div>
+      </div>
+
+
+      <!-- Perspective analysis -->
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div id="perspective-content">
+                   <div class="row">
+                    <!-- [ Morris Chart ] start -->
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Improving Customer Service</h5>
+                        </div>
+                        <div class="card-block">
+                          <b>Recommendation:</b>Implement comprehensive customer service training for all staff members to ensure professionalism, courtesy, and efficient communication with users.
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Enhancing Service Availability</h5>
+                        </div>
+                        <div class="card-block">
+                          <b>Recommendation:</b>Develop a service management strategy that ensures all service points are consistently available and responsive to user needs, minimizing service unavailability complaints.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Strengthening Communication Channels</h5>
+                        </div>
+                        <div class="card-block">
+                          <b>Recommendation:</b>Enhance both in-person and online communication channels, providing clear and timely information to users, and offering support for online complaints and inquiries.              </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Privacy Measures</h5>
+                        </div>
+                        <div class="card-block">
+                          <b>Recommendation:</b>Implement robust privacy policies and data protection protocols, ensuring that users' sensitive information is handled securely and transparently.              </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Meeting Diverse User Expectations</h5>
+                        </div>
+                        <div class="card-block">
+                          <b>Recommendation:</b> Continuously assess user expectations and adjust services to cater to a diverse user base. Provide clear information about the range of services offered to manage varying perceptions.
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-xl-6">
+                      <div class="card user-list">
+                        <div class="card-header">
+                          <h5>Feedback Loop</h5>
+                        </div>
+                        <div class="card-block">
+                          <b>Recommendation:</b> Establish a feedback system that encourages users to provide input on their experiences, issues, and suggestions, allowing for real-time adjustments and improvements.              </div>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+
+
+     <!-- Comparative analysis -->
+      <div class="tab-pane fade" id="comparative" role="tabpanel" aria-labelledby="comparative-tab">
+        <div id="comparative-content">
+
+              <div class="row">
+                <!-- [ Morris Chart ] start -->
+
+
+                <div class="col-xl-6">
+                  <div class="card user-list">
+                    <div class="card-header">
+                      <h5>positive feedback themes</h5>
+                    </div>
+                    <div class="card-block">
+                      
+                      
+                      <b>Efficiency and Convenience:</b> Several positive reviews highlight the efficiency and convenience of the Dubai Smart Police Station. Reviewers appreciate the quick and easy processes for services like updating phone numbers and Emirates ID.
+                      <hr>
+                      <b>Helpful Officers:</b> Some reviewers mention the helpfulness of police officers at the station. They praise the assistance provided during their visits.
+                      <hr>
+                      <b>Satisfaction and Speed:</b> Words like "satisfaction," "satisfied," and "fast" appear in positive reviews, indicating that some individuals are content with the services and the speed at which they were provided.
+                      <hr>
+                      <b>Overall Positive Sentiment:</b> Positive sentiment words like "good," "great," and "awesome" reflect the overall positive experiences of some visitors.
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-xl-6">
+                  <div class="card user-list">
+                    <div class="card-header">
+                      <h5>Negative feedback themes</h5>
+                    </div>
+                    <div class="card-block">
+                      <b>Service Availability:</b> Several negative reviews mention issues with the availability of services. Some reviewers express frustration with the unavailability of certain services or long waiting times.
+
+                      <hr>
+                      <b>Rude Behavior: </b>A few reviews mention negative experiences with the behavior of staff or officers, describing encounters as "rude" or mentioning poor customer service.
+
+                      <hr>
+                      <b>Update Issues: </b>Some reviewers express difficulty updating their information, particularly their phone numbers linked to Emirates ID. They express frustration with misinformation or difficulties in the process.
+
+                      <hr>
+                      <b>Lack of Follow-up:</b> A couple of reviews indicate that they opened cases but received no follow-up or resolution, leading to dissatisfaction.
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-xl-6">
+                  <div class="card user-list">
+                    <div class="card-header">
+                      <h5>Common themes</h5>
+                    </div>
+                    <div class="card-block">
+                      <b>Emirates ID Updates: </b>Both positive and negative reviews mention the process of updating Emirates ID information, indicating that this is a common reason for visiting the Smart Police Station.
+                      <hr>
+                      <b>Overall Satisfaction: </b>Regardless of the negative feedback, all reviewers seem to value and acknowledge the significance of the services provided by the Dubai Smart Police Station.
+                      <hr>
+                      <b>Sentiment Variability:</b> There is sentiment variability within both positive and negative reviews, highlighting that individual experiences may vary.
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="col-xl-6">
+                  <div class="card user-list">
+                    <div class="card-header">
+                      <h5>Summary</h5>
+                    </div>
+                    <div class="card-block">
+                      the comparative analysis reveals that while many reviewers have positive experiences with the Dubai Smart Police Station, there are also instances of negative feedback related to service availability, staff behavior, and difficulty with certain processes. Understanding these common themes can help the station identify areas for improvement and provide a more satisfactory experience for all visitors.
+                    </div>
+                  </div>
+                </div>
+              </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+{% block extra_js %}
+
+
+  <script src="{% static 'assets/plugins/chart-morris/js/raphael.min.js' %}"></script>
+  <script src="{% static 'assets/plugins/chart-morris/js/morris.min.js' %}"></script>
+  <script src="{% static 'assets/js/pages/chart-morris-custom.js' %}"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script> -->
+    <!-- chart-morris Js -->
+    <script>
+      var colorDanger = "#FF1744";
+      Morris.Donut({
+        element: 'donut-example',
+        resize: true,
+        colors: [
+          '#E0F7FA',
+          '#B2EBF2',
+          '#80DEEA',
+          '#4DD0E1',
+          '#26C6DA',
+          '#00BCD4',
+          '#00ACC1',
+          '#0097A7',
+          '#00838F',
+          '#006064'
+        ],
+        //labelColor:"#cccccc", // text color
+        //backgroundColor: '#333333', // border color
+        data: [
+          {label:"positive sentiments", value:77, color:"#0000FF"},
+          {label:"negative sentiments", value:23,color:colorDanger},
+          {label:"neutral sentiments", value:8}
+        ]
+      });
+      </script>
+     <script>
+      // Function to activate a specific tab content
+      function activateTab(tabId) {
+        $('#myTab a[href="#' + tabId + '"]').tab('show');
+      }
+    
+      // Read the URL and activate the tab if a parameter is present
+      $(document).ready(function () {
+        var url = new URL(window.location.href);
+        var tabParam = url.searchParams.get("tab");
+    
+        if (tabParam) {
+          activateTab(tabParam);
+          // Activate tab content based on the parameter
+          $('#' + tabParam + '-content').show();
+        }
+      });
+    </script>
+    
+
+{% endblock extra_js %}
